@@ -108,7 +108,7 @@ const Contact = () => {
           Work
         </div>
         <div className="work_pill2 w-[60%]  py-[0.25em] px-[0.5em] border border-[#000] bg-accent text-center rounded-[0.5em] self-start ml-[7vw] md:ml-[3vw] lg:ml-[1.5vw] will-change-transform">
-          Let's
+          Let&apos;s
         </div>
         {/* <div className="w-[60%] absolute bottom-0 left-[10px] rotate-[20deg] py-[0.25em] px-[1em]">Let's</div> */}
       </div>
