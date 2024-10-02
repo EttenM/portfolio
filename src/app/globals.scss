@@ -45,10 +45,11 @@ html.lenis body {
 :root {
   --accentColor: #1e3d2e;
   --goldColor: #dfbe6a;
+  --index: 1vh + 1vw;
 }
-html {
-  overflow: hidden;
-}
+// html {
+//   overflow: hidden;
+// }
 body {
   // overflow: hidden;
   scroll-behavior: smooth;
@@ -194,10 +195,10 @@ a:hover > .mail path {
 }
 @keyframes slide {
   from {
-    transform: translateX(30%);
+    transform: translateX(10%);
   }
   to {
-    transform: translateX(0%);
+    transform: translateX(-20%);
   }
 }
 @keyframes slide-reverse {
@@ -211,7 +212,9 @@ a:hover > .mail path {
 
 .split_type {
   font-kerning: none;
+  hyphens: auto;
 }
-.char {
+.line {
   will-change: transform;
+  hyphens: auto;
 }

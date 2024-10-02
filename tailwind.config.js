@@ -18,8 +18,8 @@ module.exports = {
       colors: {
         mainColor: "#EAEAEA",
         black: "#000000",
-        accent: "#1E3D2E",
-        gold: "#DFBE6A",
+        accent: "var(--accentColor)",
+        gold: "var(--goldColor)",
         gray: "#1E1E1E",
       },
     },

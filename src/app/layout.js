@@ -19,7 +19,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">
-      <body className={`${literata.className} antialiased bg-accent `}>
+      <body
+        className={`${literata.className} antialiased bg-accent overflow-y-hidden`}
+      >
         <Lenis>{children}</Lenis>
       </body>
     </html>

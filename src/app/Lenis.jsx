@@ -26,7 +26,7 @@ const Lenis = ({ children }) => {
   return (
     <ReactLenis root options={lenisOptions} ref={lenisRef}>
       <Preloader setPreload={setPreload} preloadOver={preloadOver} />
-      <div className="bg-mainColor rounded-[40px]">
+      <div className="bg-mainColor rounded-b-[40px]">
         <Header lenis={lenis} preloadOver={preloadOver} />
         {children}
       </div>

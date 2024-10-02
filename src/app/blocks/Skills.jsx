@@ -24,19 +24,19 @@ const Skills = () => {
   });
   return (
     <section
-      className="w-screen flex flex-col justify-center items-center gap-[5vh] py-[5vh] md:py-[10vh] overflow-hidden text-[4vw] md:text-[1.75vw] font-semibold"
+      className="w-screen flex flex-col justify-center items-center gap-[5vh] py-[max(60px,calc(var(--index)*5))] overflow-hidden text-[4vw] lg:text-[1.75vw] font-semibold"
       id="skills"
     >
-      <div className="scrollingText  flex items-center py-[15px] gap-[30px] will-change-transform whitespace-nowrap border-t border-b border-gray  rotate-[-3deg] ">
-        <div className="text_slide flex items-center gap-[30px] will-change-transform">
+      <div className="scrollingText  flex items-center py-[15px] gap-[30px] translate-x-[15%] will-change-transform whitespace-nowrap border-t border-b border-gray  rotate-[-3deg] ">
+        <div className="text_slide flex items-center gap-[30px] will-change-transform ">
           {[...Array(4)].map((e, i) =>
             line_one.map((word, index) => (
-              <>
-                <span key={`repeat-${i} line_one${index}`}>{word}</span>
-                <span
-                  className="text-accent "
-                  key={`repeat-${i} line_one-${index}`}
-                >
+              <div
+                className="flex items-center gap-[30px]"
+                key={`repeat-${i}-line_one${index}`}
+              >
+                <span>{word}</span>
+                <span>
                   <svg
                     width="21"
                     height="23"
@@ -50,25 +50,25 @@ const Skills = () => {
                     />
                   </svg>
                 </span>
-              </>
+              </div>
             ))
           )}
         </div>
       </div>
 
-      <h2 className="text-[13vw] sm:text-[4vw] text-gray/70 font-semibold">
+      <h2 className="text-[13vw] lg:text-[4vw] text-gray/70 font-semibold">
         Навыки
       </h2>
       <div className="scrollingText2  flex items-center py-[15px] gap-[30px] will-change-transform whitespace-nowrap border-t border-b border-gray rotate-[-3deg] ">
         <div className="text_slide-reverse flex items-center gap-[30px] will-change-transform">
           {[...Array(4)].map((e, i) =>
             line_two.map((word, index) => (
-              <>
-                <span key={`line_two-${i} line_two${index}`}>{word}</span>
-                <span
-                  className="text-accent "
-                  key={`line_two-${i} line_two-${index}`}
-                >
+              <div
+                className="flex items-center gap-[30px]"
+                key={`line_two-${i}-line_two${index}`}
+              >
+                <span>{word}</span>
+                <span>
                   <svg
                     width="21"
                     height="23"
@@ -82,7 +82,7 @@ const Skills = () => {
                     />
                   </svg>
                 </span>
-              </>
+              </div>
             ))
           )}
         </div>

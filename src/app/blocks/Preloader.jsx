@@ -7,7 +7,7 @@ const Preloader = ({ setPreload, preloadOver }) => {
   const target = useRef();
   useGSAP(() => {
     const split_text = new SplitType(target.current, {
-      splitClass: "split-text",
+      splitClass: "preload-text",
       types: "chars",
     });
 
@@ -28,7 +28,7 @@ const Preloader = ({ setPreload, preloadOver }) => {
           setPreload(true);
         },
       })
-      .to("html", {
+      .to("body", {
         overflowY: "auto",
       })
       .to(".preload", {

@@ -53,15 +53,15 @@ const Contact = () => {
   }, [alert]);
   return (
     <div
-      className="flex flex-col md:flex-row  gap-[30px] w-[95%] sm:w-[90%] 2xl:min-h-[60vh] pb-[30px] overflow-hidden "
+      className="flex flex-col lg:flex-row  gap-[30px] w-[95%] lg:w-[90%] 2xl:min-h-[60vh] pb-[30px] overflow-hidden "
       id="contact"
       ref={contact_section}
     >
       <div className="flex flex-col flex-1 gap-[20px] md:gap-[5vh]">
-        <h2 className="text-[13vw] sm:text-[4vw] text-gray/70 font-medium ">
+        <h2 className="text-[13vw] lg:text-[4vw] text-gray/70 font-medium ">
           Связаться
         </h2>
-        <div className="flex flex-col gap-[15px] lg:gap-[30px] text-[4vw] sm:text-[2vw] text-white">
+        <div className="flex flex-col gap-[15px] lg:gap-[30px] text-[4vw] lg:text-[2vw] text-white">
           <a
             href="https://t.me/Mixail_e"
             target="_blank"
@@ -69,7 +69,7 @@ const Contact = () => {
           >
             Telegram
           </a>
-          <div className="flex gap-[5px] sm:gap-[15px]">
+          <div className="flex gap-[5px] lg:gap-[15px]">
             <button
               onClick={copyLink}
               className="relative bg-gray py-[0.25em] rounded-[0.5em] text-center hover:bg-accent hover:text-gold duration-300 ease-out w-full 
@@ -84,7 +84,7 @@ const Contact = () => {
             <a
               href="mailto:nettecrptwork@gmail.com"
               target="_blank"
-              className="bg-gray py-[0.25em] px-[0.75em] sm:px-[0.5em]   h-full w-fit sm:w-auto aspect-square rounded-[0.5em] flex items-center justify-center hover:bg-accent hover:text-gold duration-300 ease-out "
+              className="bg-gray py-[0.25em] px-[0.75em] lg:px-[0.5em]   h-full w-fit lg:w-auto aspect-square rounded-[0.5em] flex items-center justify-center hover:bg-accent hover:text-gold duration-300 ease-out "
             >
               <MailSvg />
             </a>
@@ -101,7 +101,7 @@ const Contact = () => {
       </div>
       <div
         ref={boxRef}
-        className="boxRef relative w-full sm:w-[80%] h-[30vh] md:h-auto md:w-[30vw] mx-auto rounded-[40px] border border-[#000] text-[8vw] sm:text-[3vw] text-white font-bold
+        className="boxRef relative w-full sm:w-[80%] min-h-[calc(var(--index)*50)] h-[30vh] lg:min-h-0 lg:h-auto lg:w-[30vw] mx-auto rounded-[40px] border border-[#000] text-[8vw] lg:text-[3vw] text-white font-bold
       flex flex-col items-center justify-end gap-[0.25px] overflow-hidden"
       >
         <div className="work_pill1 w-[60%]  py-[0.25em] px-[0.5em] border border-[#000] bg-accent text-center rounded-[0.5em] self-end mr-[4vw]  md:mr-[3vw] will-change-transform">
