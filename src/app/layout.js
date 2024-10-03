@@ -11,16 +11,16 @@ const literata = localFont({
 });
 
 export const metadata = {
-  title: "Михаил - Фронтенд разработчик",
+  title: "Михаил - Web разработчик",
   description:
-    "Создам качественный сайт любой сложности с современными анимациями, 3D. Представьте продукт в лучшем свете. Адаптация под устройства, SEO оптимизация, поддержка.",
+    "Создам качественный сайт любой сложности с современными анимациями, 3D. Адаптация под устройства, SEO оптимизация, поддержка.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">
       <body
-        className={`${literata.className} antialiased bg-accent overflow-y-hidden`}
+        className={`${literata.className} antialiased bg-accent overflow-y-hidden `}
       >
         <Lenis>{children}</Lenis>
       </body>

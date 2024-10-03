@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef, useState } from "react";
 import CopySvg from "../svg/CopySvg";
 import MailSvg from "../svg/MailSvg";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,14 +63,14 @@ const Contact = () => {
           Связаться
         </h2>
         <div className="flex flex-col gap-[15px] lg:gap-[30px] text-[4vw] lg:text-[2vw] text-white">
-          <a
+          <Link
             href="https://t.me/Mixail_e"
             target="_blank"
-            className="bg-gray py-[0.25em] rounded-[0.5em] text-center hover:bg-accent hover:text-gold duration-300 ease-out"
+            className="bg-gray py-[0.25em] rounded-[0.5em] text-center hover:bg-accent hover:text-gold duration-300 ease-out hovered"
           >
             Telegram
-          </a>
-          <div className="flex gap-[5px] lg:gap-[15px]">
+          </Link>
+          <div className="flex gap-[5px] lg:gap-[15px] hovered">
             <button
               onClick={copyLink}
               className="relative bg-gray py-[0.25em] rounded-[0.5em] text-center hover:bg-accent hover:text-gold duration-300 ease-out w-full 
@@ -81,28 +82,29 @@ const Contact = () => {
                 Скопировано
               </div>
             </button>
-            <a
+            <Link
               href="mailto:nettecrptwork@gmail.com"
               target="_blank"
-              className="bg-gray py-[0.25em] px-[0.75em] lg:px-[0.5em]   h-full w-fit lg:w-auto aspect-square rounded-[0.5em] flex items-center justify-center hover:bg-accent hover:text-gold duration-300 ease-out "
+              className="bg-gray py-[0.25em] px-[0.75em] lg:px-[0.5em]   h-full w-fit lg:w-auto aspect-square rounded-[0.5em] flex items-center justify-center 
+              hover:bg-accent hover:text-gold duration-300 ease-out hovered"
             >
               <MailSvg />
-            </a>
+            </Link>
           </div>
 
-          <a
+          <Link
             href="https://t.me/Mixail_e"
             target="_blank"
-            className="bg-gray py-[0.25em] rounded-[0.5em] text-center hover:bg-accent hover:text-gold duration-300 ease-out"
+            className="bg-gray py-[0.25em] rounded-[0.5em] text-center hover:bg-accent hover:text-gold duration-300 ease-out hovered"
           >
             Telegram
-          </a>
+          </Link>
         </div>
       </div>
       <div
         ref={boxRef}
         className="boxRef relative w-full sm:w-[80%] min-h-[calc(var(--index)*50)] h-[30vh] lg:min-h-0 lg:h-auto lg:w-[30vw] mx-auto rounded-[40px] border border-[#000] text-[8vw] lg:text-[3vw] text-white font-bold
-      flex flex-col items-center justify-end gap-[0.25px] overflow-hidden"
+      flex flex-col items-center justify-end gap-[0.25px] overflow-hidden "
       >
         <div className="work_pill1 w-[60%]  py-[0.25em] px-[0.5em] border border-[#000] bg-accent text-center rounded-[0.5em] self-end mr-[4vw]  md:mr-[3vw] will-change-transform">
           Work

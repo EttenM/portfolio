@@ -4,6 +4,7 @@ import { ReactLenis, useLenis } from "lenis/react";
 import Footer from "./blocks/footer/Footer";
 import Header from "./blocks/Header";
 import Preloader from "./blocks/Preloader";
+import Cursor from "./components/Cursor";
 
 const Lenis = ({ children }) => {
   const [preloadOver, setPreload] = useState(false);
@@ -25,6 +26,7 @@ const Lenis = ({ children }) => {
 
   return (
     <ReactLenis root options={lenisOptions} ref={lenisRef}>
+      <Cursor />
       <Preloader setPreload={setPreload} preloadOver={preloadOver} />
       <div className="bg-mainColor rounded-b-[40px]">
         <Header lenis={lenis} preloadOver={preloadOver} />

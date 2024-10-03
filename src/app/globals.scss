@@ -45,7 +45,9 @@ html.lenis body {
 :root {
   --accentColor: #1e3d2e;
   --goldColor: #dfbe6a;
+  --grayColor: #1e1e1e;
   --index: 1vh + 1vw;
+  --cubic-bezier: cubic-bezier(1, 0.76, 0.95, 1.05);
 }
 // html {
 //   overflow: hidden;
@@ -82,17 +84,18 @@ a:hover > .mail path {
   background: linear-gradient(180deg, #1e3d2e 0%, #0a1d14 100%);
 }
 
+// BURGER
 .burger {
   transition: 0.25s ease-in-out;
 
   & span {
     display: block;
-    background: #fff;
+    background: var(--grayColor);
+
     border-radius: 2px;
     transition: 0.25s ease-in-out;
   }
 }
-
 #hamburger {
   display: flex;
   flex-direction: column;
@@ -123,6 +126,7 @@ a:hover > .mail path {
   width: 100%;
   transform: rotate(45deg);
   & span {
+    background: #fff;
     &:nth-child(1) {
       width: 4px;
       height: 0%;
@@ -217,4 +221,41 @@ a:hover > .mail path {
 .line {
   will-change: transform;
   hyphens: auto;
+}
+
+// Cursor
+// .cursor {
+//   width: 40px;
+//   aspect-ratio: 1/1;
+//   border-radius: 100%;
+//   border: 1px solid black;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   pointer-events: none;
+//   z-index: 999;
+// }
+.cursor-follower {
+  mix-blend-mode: difference;
+  transition: width 0.25s var(--cubic-bezier),
+    background-color 0.25s var(--cubic-bezier);
+}
+.cursor-follower.active {
+  width: 30px;
+  // background-color: var(--goldColor);
+
+  // opacity: 50%;
+}
+.project__link:hover * video {
+  transform: scale(1.1);
+}
+.project__link:hover .arrow-1 {
+  top: 50%;
+  left: 150%;
+  transform: translate(-150%, -50%);
+}
+.project__link:hover .arrow-2 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

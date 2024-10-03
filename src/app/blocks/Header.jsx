@@ -50,11 +50,9 @@ const Header = ({ lenis, preloadOver }) => {
           Михаил Е.
         </h3>
         <button
-          className={`burger w-[50px] h-[25px] lg:w-[4vw] lg:h-[5vh] flex flex-col justify-center items-center gap-2 rounded-[20px] relative z-[102] ${
-            openMenu
-              ? "bg-gold text-accent active_burger "
-              : "bg-accent text-gold"
-          }`}
+          className={`burger w-[50px] h-[25px] lg:w-[4vw] lg:h-[5vh] flex flex-col justify-center items-center gap-2 rounded-[20px] relative z-[102]  ${
+            openMenu ? "text-accent active_burger " : " text-gold"
+          } hovered`}
           onClick={() => {
             toggleMenu();
           }}
@@ -71,7 +69,7 @@ const Header = ({ lenis, preloadOver }) => {
         </button>
       </div>
       <div className={`menu_wrapp hidden fixed inset-0 gradient z-[100]  `}>
-        <div className=" w-[90%] h-full mx-auto uppercase text-[6.5vw] text-gold font-bold flex flex-col md:flex-row justify-сenter items-start gap-[5vh] md:gap-[10vw] pt-[10vh]">
+        <div className=" w-[90%] h-full mx-auto uppercase text-[6.5vw] text-gold font-bold flex flex-col md:flex-row justify-сenter items-start gap-[5vh] md:gap-[10vw] pt-[10vh] overflow-auto">
           <div className="flex flex-col gap-[5vh]">
             <Link
               href="#"
