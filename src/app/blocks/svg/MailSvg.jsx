@@ -1,9 +1,9 @@
 import React from "react";
 
-const MailSvg = () => {
+const MailSvg = ({ className }) => {
   return (
     <svg
-      className="mail w-[1em] h-auto duration-300 ease-out"
+      className={className}
       viewBox="0 0 30 30"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

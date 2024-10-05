@@ -6,7 +6,6 @@ const Cursor = () => {
   const cursor = useRef();
   useGSAP(() => {
     gsap.set(".cursor", { xPercent: -50, yPercent: -50 });
-    gsap.set(".cursor-follower", { xPercent: -50, yPercent: -50 });
 
     let xTo = gsap.quickTo(".cursor", "x", {
         duration: 0.2,

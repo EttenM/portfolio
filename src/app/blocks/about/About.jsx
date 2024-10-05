@@ -28,7 +28,7 @@ const About = () => {
         ease: "elastic.out",
         scrollTrigger: {
           trigger: target.current,
-          start: "center center",
+          start: "bottom bottom",
         },
       }
     );

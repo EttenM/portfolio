@@ -88,7 +88,9 @@ const Contact = () => {
               className="bg-gray py-[0.25em] px-[0.75em] lg:px-[0.5em]   h-full w-fit lg:w-auto aspect-square rounded-[0.5em] flex items-center justify-center 
               hover:bg-accent hover:text-gold duration-300 ease-out hovered"
             >
-              <MailSvg />
+              <MailSvg
+                className={"mail w-[1em] h-auto duration-300 ease-out"}
+              />
             </Link>
           </div>
 
