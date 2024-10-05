@@ -8,22 +8,18 @@ const Cursor = () => {
     gsap.set(".cursor", { xPercent: -50, yPercent: -50 });
     gsap.set(".cursor-follower", { xPercent: -50, yPercent: -50 });
 
-    let // xTo = gsap.quickTo(".cursor", "x", { duration: 0.6, ease: "power3" }),
-      //   yTo = gsap.quickTo(".cursor", "y", { duration: 0.6, ease: "power3" }),
-      xFollTo = gsap.quickTo(".cursor-follower", "x", {
+    let xTo = gsap.quickTo(".cursor", "x", {
         duration: 0.2,
         ease: "power3",
       }),
-      yFollTo = gsap.quickTo(".cursor-follower", "y", {
+      yTo = gsap.quickTo(".cursor", "y", {
         duration: 0.2,
         ease: "power3",
       });
 
     window.addEventListener("mousemove", (e) => {
-      // xTo(e.clientX);
-      // yTo(e.clientY);
-      xFollTo(e.clientX);
-      yFollTo(e.clientY);
+      xTo(e.clientX);
+      yTo(e.clientY);
     });
 
     const hover_items = document.querySelectorAll(
@@ -43,7 +39,7 @@ const Cursor = () => {
     <>
       {/* <div className="cursor w-[40px] aspect-square fixed top-0 left-0 pointer-events-none  z-[999] rounded-full border border-gray"></div> */}
       <div
-        className="cursor-follower w-[10px] aspect-square fixed top-0 left-0 pointer-events-none  z-[999] rounded-full bg-white"
+        className="cursor w-[10px] aspect-square fixed top-0 left-0 pointer-events-none  z-[999] rounded-full bg-white"
         ref={cursor}
       ></div>
     </>

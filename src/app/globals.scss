@@ -235,12 +235,12 @@ a:hover > .mail path {
 //   pointer-events: none;
 //   z-index: 999;
 // }
-.cursor-follower {
+.cursor {
   mix-blend-mode: difference;
   transition: width 0.25s var(--cubic-bezier),
     background-color 0.25s var(--cubic-bezier);
 }
-.cursor-follower.active {
+.cursor.active {
   width: 30px;
   // background-color: var(--goldColor);
 
@@ -258,4 +258,10 @@ a:hover > .mail path {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media (hover: none) {
+  .cursor {
+    display: none;
+  }
 }

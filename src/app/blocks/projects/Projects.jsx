@@ -18,28 +18,28 @@ const Projects = () => {
       id: 1,
       name: "pr1",
       src: "/WrapMe.mp4",
-      poster: "/posters/deepact_poster.jpg",
+      poster: "/posters/wrapme_poster.jpg",
       link: "https://wm-lend.vercel.app",
     },
     {
       id: 2,
       name: "pr2",
       src: "/Deepact.mp4",
-      poster: "/posters/gt3_poster.jpg",
+      poster: "/posters/deepact_poster.jpg",
       link: "https://deepact-next2.vercel.app",
     },
     {
       id: 3,
       name: "pr3",
       src: "/Porsche2.mp4",
-      poster: "/posters/ordi_poster.jpg",
+      poster: "/posters/gt3_poster.jpg",
       link: "https://gt3-rs-one.vercel.app",
     },
     {
       id: 4,
       name: "pr4",
       src: "/Ordi.mp4",
-      poster: "/posters/wrapme_poster.jpg",
+      poster: "/posters/ordi_poster.jpg",
       link: "https://ordinals-world.vercel.app",
     },
   ];
@@ -180,7 +180,7 @@ const Projects = () => {
               src={card.src}
               className="video w-full h-full object-cover focus:outline-none "
               loop
-              preload="none"
+              preload="auto"
               playsInline
               poster={card.poster}
               muted
