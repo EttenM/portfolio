@@ -55,11 +55,17 @@ html.lenis body {
 body {
   // overflow: hidden;
   scroll-behavior: smooth;
+  font-size: calc(var(--index) * 0.5);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+input,
+textarea {
+  background-color: transparent;
+  outline: none;
 }
 // .circle {
 //   background: linear-gradient(180deg, #1e3d2e 0%, #0a1d14 100%);
@@ -235,6 +241,7 @@ a:hover > .mail path {
 //   pointer-events: none;
 //   z-index: 999;
 // }
+// Cursor
 .cursor {
   mix-blend-mode: difference;
   transition: width 0.25s var(--cubic-bezier),
@@ -263,5 +270,41 @@ a:hover > .mail path {
 @media (hover: none) {
   .cursor {
     display: none;
+  }
+}
+// Form
+.form_label {
+  font-size: calc(var(--index) * 1);
+  color: var(--grayColor);
+  opacity: 80;
+  font-weight: 500;
+}
+textarea::placeholder,
+input::placeholder {
+  font-size: calc(var(--index) * 0.5);
+}
+
+@media (max-width: 1600px) {
+  .form_label {
+    font-size: 20px;
+  }
+  textarea::placeholder,
+  input::placeholder {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1280px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 640px) {
+  textarea::placeholder,
+  input::placeholder {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .form_label {
+    font-size: 20px;
   }
 }

@@ -6,22 +6,24 @@ gsap.registerPlugin(ScrollTrigger);
 const Skills = () => {
   const line_one = ["JavaScript", "React", "Next.js", "Sass"];
   const line_two = ["Gsap", "Framer Motion", "Three.js", "Tailwind"];
-  useGSAP(() => {
-    gsap.to(".scrollingText", {
-      xPercent: -15,
-      scrollTrigger: {
-        trigger: ".scrollingText",
-        scrub: 1,
-      },
-    });
-    gsap.to(".scrollingText2", {
-      xPercent: 15,
-      scrollTrigger: {
-        trigger: ".scrollingText",
-        scrub: 1,
-      },
-    });
-  });
+  // useGSAP(() => {
+  //   if (ScrollTrigger.isInViewport("#skills")) {
+  //     gsap.to(".scrollingText", {
+  //       xPercent: -15,
+  //       scrollTrigger: {
+  //         trigger: ".scrollingText",
+  //         scrub: 1,
+  //       },
+  //     });
+  //     gsap.to(".scrollingText2", {
+  //       xPercent: 15,
+  //       scrollTrigger: {
+  //         trigger: ".scrollingText",
+  //         scrub: 1,
+  //       },
+  //     });
+  //   }
+  // });
   return (
     <section
       className="w-screen flex flex-col justify-center items-center gap-[5vh] py-[max(60px,calc(var(--index)*5))] overflow-hidden text-[4vw] lg:text-[1.75vw] font-semibold"

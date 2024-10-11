@@ -87,7 +87,7 @@ const Projects = () => {
         },
         (context) => {
           let { isDesktop, isMobile, reduceMotion } = context.conditions;
-          let height = window.innerHeight;
+          let height = window.innerHeight <= 500 ? 700 : window.innerHeight;
           const tl = gsap.timeline();
           ScrollTrigger.create({
             trigger: ".projects_section",
@@ -154,13 +154,13 @@ const Projects = () => {
     >
       <h2
         ref={title_up}
-        className="text-[15vw] sm:text-[10vw] absolute top-[15%] lg:top-[5%] left-[5%] translate-x-[-5%] translate-y-[-15%] sm:translate-y-[-5%] leading-[1] font-bold opacity-70 will-change-transform"
+        className="text-[15vw] sm:text-[10vw] absolute top-[15%] lg:top-[5%] left-[5%] translate-x-[-5%] translate-y-[-15%] sm:translate-y-[-5%] leading-[1] font-medium opacity-70 will-change-transform"
       >
         Недавние
       </h2>
       <h2
         ref={title_dawn}
-        className="text-[15vw] sm:text-[10vw] absolute bottom-[15%] lg:bottom-[5%] right-[5%] translate-x-[-5%] translate-y-[-15%] sm:translate-y-[-5%] leading-[1] font-bold opacity-70 will-change-transform"
+        className="text-[15vw] sm:text-[10vw] absolute bottom-[15%] lg:bottom-[5%] right-[5%] translate-x-[-5%] translate-y-[-15%] sm:translate-y-[-5%] leading-[1] font-medium opacity-70 will-change-transform"
       >
         Проекты
       </h2>

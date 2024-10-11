@@ -50,6 +50,8 @@ const Header = ({ lenis, preloadOver }) => {
           Михаил Е.
         </h3>
         <button
+          name="burger_menu"
+          role="button"
           className={`burger w-[50px] h-[25px] lg:w-[4vw] lg:h-[5vh] flex flex-col justify-center items-center gap-2 rounded-[20px] relative z-[102]  ${
             openMenu ? "text-accent active_burger " : " text-gold"
           } hovered`}

@@ -1,13 +1,13 @@
-import localFont from "next/font/local";
+import { Literata } from "next/font/google";
 import "./globals.scss";
 // import Footer from "./blocks/footer/Footer";
 
 import Lenis from "./Lenis";
 
-const literata = localFont({
-  src: "./fonts/Literata-VariableFont_opsz,wght.ttf",
-  variable: "--font-literata",
-  weight: "100 900",
+const literata = Literata({
+  subsets: ["cyrillic"],
+  variable: "--font-Literata",
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata = {
