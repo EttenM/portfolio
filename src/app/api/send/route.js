@@ -11,9 +11,9 @@ export async function POST(request) {
   // Create a transporter
   const transporter = nodemailer.createTransport({
     service: "yandex",
-    host: "smtp.yandex.ru",
-    port: 25,
-    secure: false,
+    // secure: false,
+    // requireTLS: true,
+    // port: 2525,
     auth: { user: "Mixailerm03", pass: "xsjlkipthgqsvscd" },
     // tls: {
     //   // do not fail on invalid certs
