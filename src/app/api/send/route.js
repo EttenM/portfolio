@@ -6,14 +6,14 @@ export async function POST(request) {
 
   // Create a transporter
   const transporter = nodemailer.createTransport({
-    service: "Gmail",
-    auth: { user: "ermishkin.m0001@gmail.com", pass: "gqyu iltb mmow szht" },
+    service: "yandex",
+    auth: { user: process.env.NODEMAIL_USER, pass: process.env.NODEMAIL_PASS },
     // "gqyu iltb mmow szht"
   });
   // Define the email options
   const mailOptions = {
-    from: "ermishkin.m0001@gmail.com",
-    to: "ermishkin.m0001@gmail.com",
+    from: process.env.NODEMAIL_MAIL,
+    to: process.env.NODEMAIL_MAIL,
     subject: "Портфолио-форма",
     html: `
       <h1>Новый отклик</h1>
