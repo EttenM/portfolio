@@ -6,7 +6,7 @@ export async function POST(request) {
   console.log(
     "env " + process.env.NODEMAIL_USER,
     process.env.NODEMAIL_PAS,
-    NODEMAIL_MAIL
+    process.env.NODEMAIL_MAIL
   );
   // Create a transporter
   const transporter = nodemailer.createTransport({
@@ -14,13 +14,13 @@ export async function POST(request) {
     host: "smtp.yandex.ru",
     port: 465,
     secure: true,
-    auth: { user: process.env.NODEMAIL_USER, pass: process.env.NODEMAIL_PASS },
+    auth: { user: "Mixailerm03", pass: "xsjlkipthgqsvscd" },
     // "gqyu iltb mmow szht"
   });
   // Define the email options
   const mailOptions = {
-    from: process.env.NODEMAIL_MAIL,
-    to: process.env.NODEMAIL_MAIL,
+    from: "Mixailerm03@ya.ru",
+    to: "Mixailerm03@ya.ru",
     subject: "Портфолио-форма",
     html: `
       <h1>Новый отклик</h1>
