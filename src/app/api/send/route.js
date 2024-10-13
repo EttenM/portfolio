@@ -12,8 +12,8 @@ export async function POST(request) {
   const transporter = nodemailer.createTransport({
     service: "yandex",
     host: "smtp.yandex.ru",
-    port: 465,
-    secure: true,
+    port: 25,
+    secure: false,
     auth: { user: "Mixailerm03", pass: "xsjlkipthgqsvscd" },
     // tls: {
     //   // do not fail on invalid certs
@@ -35,7 +35,6 @@ export async function POST(request) {
   };
   // Send the email
   console.log("mailOptions " + mailOptions.from);
-  console.log("before Send the email");
   transporter.verify(function (error, success) {
     if (error) {
       console.log(error);
@@ -43,6 +42,8 @@ export async function POST(request) {
       console.log("Server is ready to take our messages");
     }
   });
+  console.log("before Send the email");
+
   await transporter.sendMail(mailOptions);
   console.log("after Send the email");
   return NextResponse.json({ msg: "Сообщение отправлено!" });
