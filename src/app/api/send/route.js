@@ -3,19 +3,17 @@ import nodemailer from "nodemailer";
 
 export async function POST(request) {
   const { name, socialLink, description } = await request.json();
-  console.log(name, socialLink, description);
-  console.log(process.env.MAIL_USER, process.env.MAIL_PASS);
 
   // Create a transporter
   const transporter = nodemailer.createTransport({
     service: "Gmail",
-    auth: { user: process.env.MAIL_USER, pass: process.env.MAIL_PASS },
+    auth: { user: "ermishkin.m0001@gmail.com", pass: "gqyu iltb mmow szht" },
     // "gqyu iltb mmow szht"
   });
   // Define the email options
   const mailOptions = {
-    from: process.env.MAIL_USER,
-    to: process.env.MAIL_USER,
+    from: "ermishkin.m0001@gmail.com",
+    to: "ermishkin.m0001@gmail.com",
     subject: "Портфолио-форма",
     html: `
       <h1>Новый отклик</h1>
