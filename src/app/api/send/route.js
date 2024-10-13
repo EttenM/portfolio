@@ -5,15 +5,15 @@ export async function POST(request) {
   const { name, socialLink, description } = await request.json();
   console.log(
     "env " + process.env.NODEMAIL_USER,
-    process.env.NODEMAIL_PAS,
+    process.env.NODEMAIL_PASS,
     process.env.NODEMAIL_MAIL
   );
   // Create a transporter
   const transporter = nodemailer.createTransport({
     service: "yandex",
     host: "smtp.yandex.ru",
-    port: 465,
-    secure: true,
+    port: 587,
+    secure: false,
     auth: { user: "Mixailerm03", pass: "xsjlkipthgqsvscd" },
     // "gqyu iltb mmow szht"
   });
