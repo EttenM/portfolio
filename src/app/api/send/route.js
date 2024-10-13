@@ -3,7 +3,11 @@ import nodemailer from "nodemailer";
 
 export async function POST(request) {
   const { name, socialLink, description } = await request.json();
-
+  console.log(
+    "env " + process.env.NODEMAIL_USER,
+    process.env.NODEMAIL_PAS,
+    NODEMAIL_MAIL
+  );
   // Create a transporter
   const transporter = nodemailer.createTransport({
     service: "yandex",
@@ -26,8 +30,8 @@ export async function POST(request) {
   `,
   };
   // Send the email
-  console.log("mailOptions " + mailOptions);
-  console.log("Send the email");
+  console.log("mailOptions " + mailOptions.from);
+  console.log("before Send the email");
   await transporter.sendMail(mailOptions);
   console.log("after Send the email");
   return NextResponse.json({ msg: "Сообщение отправлено!" });
