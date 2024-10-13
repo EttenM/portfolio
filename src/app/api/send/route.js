@@ -10,11 +10,10 @@ export async function POST(request) {
   );
   // Create a transporter
   const transporter = nodemailer.createTransport({
-    // service: "yandex",
+    service: "yandex",
     host: "smtp.yandex.ru",
-    requireTLS: true,
-    port: 578,
-    secure: false,
+    port: 465,
+    secure: true,
     auth: { user: "Mixailerm03", pass: "xsjlkipthgqsvscd" },
     // "gqyu iltb mmow szht"
   });
