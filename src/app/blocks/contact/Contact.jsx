@@ -48,9 +48,9 @@ const Contact = () => {
     e.preventDefault();
     try {
       setSending(true);
-      const response = await axios.post("/api", formData);
+      const response = await axios.post("/api/write", formData);
       // await send();
-      const emailResponse = await axios.post("/api/send", formData);
+      // const emailResponse = await axios.post("/api/send", formData);
       toast.success(response.data.msg);
       setFormData({
         name: "",
