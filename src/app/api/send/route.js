@@ -3,6 +3,8 @@ import nodemailer from "nodemailer";
 
 export async function POST(request) {
   const { name, socialLink, description } = await request.json();
+  console.log(name, socialLink, description);
+  console.log(process.env.MAIL_USER, process.env.MAIL_PASS);
 
   // Create a transporter
   const transporter = nodemailer.createTransport({
@@ -23,6 +25,9 @@ export async function POST(request) {
   `,
   };
   // Send the email
+  console.log("mailOptions " + mailOptions);
+  console.log("Send the email");
   await transporter.sendMail(mailOptions);
+  console.log("after Send the email");
   return NextResponse.json({ msg: "Сообщение отправлено!" });
 }

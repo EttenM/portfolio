@@ -21,7 +21,6 @@ const Contact = () => {
 
   useGSAP(() => {
     const bh = boxRef.current.getBoundingClientRect().height;
-    console.log(bh);
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: contact_section.current,
@@ -38,26 +37,11 @@ const Contact = () => {
       { y: 0, ease: "bounce.out", duration: 1.25 }
     );
   });
-  useEffect(() => {
-    gsap.set(".copy_message", { yPercent: -100 });
-    if (alert) {
-      gsap.to(".copy_message", { yPercent: 0 });
-      setTimeout(() => {
-        gsap.to(".copy_message", {
-          yPercent: -100,
-          onComplete: () => {
-            setAlert(false);
-          },
-        });
-      }, 3000);
-    }
-  }, [alert]);
 
   const onChangeHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setFormData((form) => ({ ...form, [name]: value }));
-    console.log(formData);
   };
 
   const onSubmitHandler = async (e) => {
