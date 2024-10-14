@@ -11,16 +11,9 @@ export async function POST(request) {
   // Create a transporter
   const transporter = nodemailer.createTransport({
     service: "yandex",
-    host: "smtp.timeweb.ru",
     secure: true,
-    // requireTLS: true,
     port: 465,
-    auth: { user: "Mixailerm03", pass: "xsjlkipthgqsvscd" },
-    // tls: {
-    //   // do not fail on invalid certs
-    //   rejectUnauthorized: false,
-    // },
-    // "gqyu iltb mmow szht"
+    auth: { user: process.env.NODEMAIL_USER, pass: process.env.NODEMAIL_PASS },
   });
   // Define the email options
   const mailOptions = {
