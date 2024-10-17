@@ -29,7 +29,7 @@ const Preloader = ({ setPreload, preloadOver }) => {
         },
       })
       .to("body", {
-        overflowY: "auto",
+        overflow: "inherit",
       })
       .to(".preload", {
         display: "none",

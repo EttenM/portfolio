@@ -11,11 +11,11 @@ const Lenis = ({ children }) => {
   const lenis = useLenis();
   const lenisRef = useRef();
   useEffect(() => {
-    lenis?.stop();
-    // lenisRef.current?.lenis?.stop()
-    if (preloadOver) {
-      lenis?.start();
-    }
+    // lenis?.stop();
+    // // lenisRef.current?.lenis?.stop()
+    // if (preloadOver) {
+    //   lenis?.start();
+    // }
   }, [lenis, preloadOver]);
   const lenisOptions = {
     easing: (t) => Math.sin((t * Math.PI) / 2),
@@ -28,7 +28,7 @@ const Lenis = ({ children }) => {
     <ReactLenis root options={lenisOptions} ref={lenisRef}>
       <Cursor />
       <Preloader setPreload={setPreload} preloadOver={preloadOver} />
-      <div className="bg-mainColor rounded-b-[40px]">
+      <div className=" bg-mainColor rounded-b-[40px]">
         <Header lenis={lenis} preloadOver={preloadOver} />
         {children}
       </div>

@@ -12,28 +12,37 @@ const Header = ({ lenis, preloadOver }) => {
   };
 
   useGSAP(() => {
+    // const lenis = document.querySelector(".lenis");
     // gsap.set(".menu_wrapp", { yPercent: -100 });
     // gsap.set(".link", { opacity: 0 });
     const menuTl = gsap.timeline({ paused: true });
     // const links = gsap.utils.toArray(".link");
     // gsap.set(".menu_wrapp", { yPercent: 100 });
     menuTl
-      .to(".menu_wrapp", { display: "block", yPercent: 0, duration: 1 })
+
+      .to(".menu_wrapp", {
+        display: "block",
+        yPercent: 0,
+        duration: 1,
+        onStart: () => {
+          lenis?.stop();
+        },
+      })
       .to(".link", { opacity: 1, stagger: 0.05, duration: 0.25 });
 
     if (openMenu) {
+      // gsap.set(".lenis", {
+      //   onComplete: () => {
+      //     lenis.classList.add("lenis-stopped");
+      //   },
+      // });
       menuTl.play();
-      lenis?.stop();
     } else if (openMenu === false) {
+      lenis?.start();
       gsap.to(".menu_wrapp", {
         yPercent: -100,
         duration: 0.5,
         display: "none",
-        onComplete: () => {
-          if (preloadOver) {
-            lenis?.start();
-          }
-        },
       });
       gsap.to(".link", {
         opacity: 0,
@@ -70,8 +79,10 @@ const Header = ({ lenis, preloadOver }) => {
           </div>
         </button>
       </div>
-      <div className={`menu_wrapp hidden fixed inset-0 gradient z-[100]  `}>
-        <div className=" w-[90%] h-full mx-auto uppercase text-[6.5vw] text-gold font-bold flex flex-col md:flex-row justify-сenter items-start gap-[5vh] md:gap-[10vw] pt-[10vh] overflow-auto">
+      <div
+        className={`menu_wrapp hidden fixed inset-0 bg-accent z-[100] overflow-hidden`}
+      >
+        <div className=" w-[90%] h-full mx-auto uppercase text-[calc(var(--index)*6)] text-gold font-bold flex flex-col md:flex-row justify-сenter items-start gap-[5vh] md:gap-[10vw] pt-[10vh]">
           <div className="flex flex-col gap-[5vh]">
             <Link
               href="#"

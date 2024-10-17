@@ -18,28 +18,28 @@ const Projects = () => {
       id: 1,
       name: "pr1",
       src: "/WrapMe.mp4",
-      poster: "/posters/wrapme_poster.jpg",
+      poster: "posters/wrapme_poster.jpg",
       link: "https://wm-lend.vercel.app",
     },
     {
       id: 2,
       name: "pr2",
       src: "/Deepact.mp4",
-      poster: "/posters/deepact_poster.jpg",
+      poster: "posters/deepact_poster.jpg",
       link: "https://deepact-next2.vercel.app",
     },
     {
       id: 3,
       name: "pr3",
       src: "/Porsche2.mp4",
-      poster: "/posters/gt3_poster.jpg",
+      poster: "posters/gt3_poster.jpg",
       link: "https://gt3-rs-one.vercel.app",
     },
     {
       id: 4,
       name: "pr4",
       src: "/Ordi.mp4",
-      poster: "/posters/ordi_poster.jpg",
+      poster: "posters/ordi_poster.jpg",
       link: "https://ordinals-world.vercel.app",
     },
   ];
@@ -93,11 +93,12 @@ const Projects = () => {
             trigger: ".projects_section",
             start: "center center",
             end: () => `+=${height * 4}px`,
-            scrub: true,
+            scrub: !0,
             pin: true,
             pinSpacing: true,
-            anticipatePin: 1,
+            anticipatePin: !0,
             animation: tl,
+            // invalidateOnRefresh: !0,
           });
 
           tl.from(".circle", { opacity: 0, width: 0, height: 0 }, "same")
@@ -149,18 +150,18 @@ const Projects = () => {
   return (
     <section
       ref={section}
-      className="projects_section relative w-screen h-screen overflow-hidden will-change-transform"
+      className="projects_section relative w-full h-screen overflow-hidden will-change-transform"
       id="works"
     >
       <h2
         ref={title_up}
-        className="text-[15vw] sm:text-[10vw] absolute top-[15%] lg:top-[5%] left-[5%] translate-x-[-5%] translate-y-[-15%] sm:translate-y-[-5%] leading-[1] font-medium opacity-70 will-change-transform"
+        className="text-[15vw] sm:text-[10vw] absolute top-[15%] lg:top-[5%] left-[5%] translate-x-[-5%] translate-y-[-15%] sm:translate-y-[-5%] leading-[1] font-medium opacity-80 will-change-transform"
       >
         Недавние
       </h2>
       <h2
         ref={title_dawn}
-        className="text-[15vw] sm:text-[10vw] absolute bottom-[15%] lg:bottom-[5%] right-[5%] translate-x-[-5%] translate-y-[-15%] sm:translate-y-[-5%] leading-[1] font-medium opacity-70 will-change-transform"
+        className="text-[15vw] sm:text-[10vw] absolute bottom-[15%] lg:bottom-[5%] right-[5%] translate-x-[-5%] translate-y-[-15%] sm:translate-y-[-5%] leading-[1] font-medium opacity-80 will-change-transform"
       >
         Проекты
       </h2>
@@ -177,14 +178,16 @@ const Projects = () => {
             key={"card_link" + card.id}
           >
             <video
-              src={card.src}
+              // src={card.src}
               className="video w-full h-full object-cover focus:outline-none "
               loop
               preload="auto"
               playsInline
               poster={card.poster}
               muted
-            ></video>
+            >
+              <source src={card.src} type="video/mp4" />
+            </video>
             <Link
               href={card.link}
               target="_blank"
