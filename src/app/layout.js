@@ -3,6 +3,7 @@ import "./globals.scss";
 // import Footer from "./blocks/footer/Footer";
 
 import Lenis from "./Lenis";
+import Head from "next/head";
 
 const literata = Literata({
   subsets: ["cyrillic"],
@@ -15,7 +16,10 @@ export const metadata = {
   description:
     "Создам креативный сайт любой сложности с современными анимациями, 3D. Адаптация под устройства, SEO оптимизация, поддержка.",
   keywords: [
-    "Сайт на заказ, разработать сайт, сайт с анимациями, сделать сайт",
+    "Сайт на заказ",
+    "Разработать сайт",
+    "Сайт с анимациями",
+    "Сделать сайт",
   ],
 };
 
