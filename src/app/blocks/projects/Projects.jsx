@@ -132,11 +132,6 @@ const Projects = () => {
               );
             }
           });
-          // .to(".projects_btn", { display: "flex", opacity: 1 }, "same2")
-
-          // .from(".card_2", { scale: 1.5, y: height * 1.25 }, "same3")
-          // .to(".card_2", { scale: 0.85, filter: "blur(12px)" }, "same4")
-          // .from(".card_3", { scale: 1.5, y: height * 1.25 }, "same4");
         }
       );
     },
@@ -151,19 +146,19 @@ const Projects = () => {
     >
       <h2
         ref={title_up}
-        className="text-[15vw] sm:text-[10vw] absolute top-[15%] lg:top-[5%] left-[5%] translate-x-[-5%] translate-y-[-15%] sm:translate-y-[-5%] leading-[1] font-medium opacity-80 will-change-transform"
+        className="text-[15vw] sm:text-[10vw] absolute top-[15%] lg:top-[5%] left-[5%] translate-x-[-5%] translate-y-[-15%] sm:translate-y-[-5%] leading-[1] font-medium text-secondColor will-change-transform "
       >
         Недавние
       </h2>
       <h2
         ref={title_dawn}
-        className="text-[15vw] sm:text-[10vw] absolute bottom-[15%] lg:bottom-[5%] right-[5%] translate-x-[-5%] translate-y-[-15%] sm:translate-y-[-5%] leading-[1] font-medium opacity-80 will-change-transform"
+        className="text-[15vw] sm:text-[10vw] absolute bottom-[15%] lg:bottom-[5%] right-[5%] translate-x-[-5%] translate-y-[-15%] sm:translate-y-[-5%] leading-[1] font-medium  text-secondColor will-change-transform  "
       >
         Проекты
       </h2>
 
       <div
-        className="circle w-[200px] h-auto bg-[#0c1f16]  rounded-full  fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] 
+        className="circle w-[200px] h-auto bg-secondAccent  rounded-full  fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] 
       aspect-square flex justify-center items-center will-change-auto"
       ></div>
       <div className="cards w-screen h-screen ">
@@ -186,30 +181,24 @@ const Projects = () => {
             <Link
               href={card.link}
               target="_blank"
-              className="project__link w-[7.5%] h-auto aspect-square rounded-full absolute bottom-[5%] right-[5%] translate-x-[-5%] translate-y-[-5%]  bg-gold text-[#0c1f16] 
-       flex justify-center items-center hovered overflow-hidden"
+              className="project__link w-[15%] md:w-[7.5%] h-auto aspect-square rounded-full absolute bottom-[5%] right-[5%] translate-x-[-5%] translate-y-[-5%]  bg-accent text-[#141414] border-2 border-[#141414]
+       flex justify-center items-center  overflow-hidden hovered"
+              tabIndex={-1}
             >
               <Arrow
                 className={
-                  "arrow arrow-1 w-[30%] h-auto absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] duration-300 ease-out pointer-events-none"
+                  "arrow arrow-1 w-[30%] h-auto absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] rotate-[315deg] duration-[0.5s] ease-out pointer-events-none"
                 }
               />
               <Arrow
                 className={
-                  "arrow arrow-2 w-[30%] h-auto absolute top-[50%] left-[-50%] translate-y-[-50%] translate-x-[50%] duration-300 ease-out pointer-events-none"
+                  "arrow arrow-2 w-[30%] h-auto absolute top-[105%] left-[-50%] translate-y-[105%] translate-x-[50%] rotate-[315deg] duration-[0.5s] ease-out pointer-events-none"
                 }
               />
             </Link>
           </div>
         ))}
       </div>
-
-      {/* <button
-        className="projects_btn hidden w-[5vw] h-auto aspect-square rounded-full fixed top-[50%] right-[5%] translate-x-[-5%] translate-y-[-50%] z-[10] bg-gold text-[#0c1f16] 
-       justify-center items-center text-[1.2vw] opacity-0"
-      >
-        Links
-      </button> */}
     </section>
   );
 };

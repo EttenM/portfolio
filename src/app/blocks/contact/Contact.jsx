@@ -71,10 +71,10 @@ const Contact = () => {
         id="contact"
         ref={contact_section}
       >
-        <h2 className="text-[13vw] lg:text-[4vw] text-gray/70 font-medium ">
+        <h2 className="text-[13vw] lg:text-[4vw] text-secondColor font-medium ">
           Связаться
         </h2>
-        <div className="w-full grid grid-rows-[1fr_300px] grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-[30px] lg:gap-[80px] justify-center items-center">
+        <div className="w-full grid grid-rows-[1fr_300px] grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-[30px] lg:gap-[80px] justify-center items-center text-secondColor">
           {/* <div className="w-full flex flex-col lg:flex-row gap-[30px] lg:gap-[80px] justify-center items-center"> */}
           <form
             action=""
@@ -129,7 +129,7 @@ const Contact = () => {
             </div>
             <button
               type="submit"
-              className="bg-accent rounded-[8px] py-3 px-11 text-white  text-[24px] lg:text-[1vw] font-medium hover:bg-gold hover:text-accent duration-150 ease-out"
+              className="bg-accent rounded-[8px] py-3 px-11 text-secondColor  text-[24px] lg:text-[1vw] font-medium hover:bg-secondAccent  duration-150 ease-out"
             >
               {sending && (
                 <>
@@ -199,7 +199,7 @@ const Contact = () => {
 
           <div
             ref={boxRef}
-            className="boxRef relative w-full h-full mx-auto rounded-[40px] border border-[#000] text-[8vw]  sm:text-[5vw] lg:text-[3vw] text-white font-bold
+            className="boxRef relative w-full h-full mx-auto rounded-[40px] border border-secondColor text-[8vw]  sm:text-[5vw] lg:text-[3vw] text-white font-bold
       flex flex-col items-center justify-end gap-[0.25px] overflow-hidden "
           >
             <div className="work_pill1 w-[60%]  py-[0.25em] px-[0.5em] border border-[#000] bg-accent text-center rounded-[0.5em] self-end mr-[4vw]  md:mr-[3vw] will-change-transform">

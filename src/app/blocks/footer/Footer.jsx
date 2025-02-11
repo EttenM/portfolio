@@ -22,13 +22,6 @@ const Footer = () => {
         >
           <TelegramSvg />
         </Link>
-        {/* <Link
-          href="https://t.me/Mixail_e"
-          target="_blank"
-          className="footer_link bg-gray w-[1.5em] xl:w-[2em] aspect-square rounded-[100%] flex items-center justify-center hover:bg-gold  duration-300 ease-out "
-        >
-          <TelegramSvg />
-        </Link> */}
       </div>
     </footer>
   );

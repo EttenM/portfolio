@@ -9,6 +9,8 @@ module.exports = {
     extend: {
       fontFamily: {
         literata: ["var(--font-literata)"],
+        rubikMonoOne: ["var(--font-rubikMonoOne)"],
+        diplomataSC: ["var(--font-diplomataSC)"],
       },
       screens: {
         s: "400px",
@@ -16,11 +18,10 @@ module.exports = {
         md: "800px",
       },
       colors: {
-        mainColor: "#EAEAEA",
-        black: "#000000",
+        mainColor: "var(--mainColor)",
+        secondColor: "var(--secondColor)",
         accent: "var(--accentColor)",
-        gold: "var(--goldColor)",
-        gray: "#1E1E1E",
+        secondAccent: "var(--secondAccent)",
       },
     },
   },
