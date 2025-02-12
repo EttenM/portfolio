@@ -13,13 +13,12 @@ jobs:
       uses: appleboy/ssh-action@v1.2.0
       with:
         host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
+        username: etten #${{ secrets.USERNAME }}
         key: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
         script: |
           ls
-          su - etten
-          ls
+          iametten
           # cd portfolio
           # cd portfolio
           # git pull origin main 
