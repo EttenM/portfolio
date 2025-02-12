@@ -19,7 +19,8 @@ jobs:
         script: |
           ls
           sudo -u etten -i -- sh -c "ls"
-          sudo -u etten -i -- sh -c "cd portfolio/portfolio"
+          sudo -u etten -i -- sh -c "cd ~/portfolio/portfolio"
+          sudo -u etten -i -- sh -c "ls"
           git pull origin main 
           git status
           npm install 
