@@ -19,15 +19,20 @@ jobs:
         script: |
           ls
           sudo -u etten -i -- sh -c "
-          ls
-          cd portfolio/portfolio
-          ls  
-          git pull origin main 
-          git status
-          npm install 
-          npm run build
-          pm2 restart all 
+            cd /portfolio/portfolio
+            ls
+            whoami
           "
+          # sudo -u etten -i -- sh -c "
+          # ls
+          # cd portfolio/portfolio
+          # ls  
+          # git pull origin main 
+          # git status
+          # npm install 
+          # npm run build
+          # pm2 restart all 
+          # "
           # sudo -u etten -i -- sh -c "cd portfolio"
           # sudo -u etten -i -- sh -c "cd portfolio"
           # sudo -u etten -i -- sh -c "ls"
