@@ -21,7 +21,11 @@ jobs:
           sudo -u etten -i -- sh -c "
             cd ~/portfolio/portfolio
             ls
-            whoami
+            git pull origin main 
+            git status
+            npm install 
+            npm run build
+            pm2 restart all 
           "
           # sudo -u etten -i -- sh -c "
           # ls
