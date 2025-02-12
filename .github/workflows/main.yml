@@ -19,7 +19,7 @@ jobs:
         script: |
           ls
           sudo -u etten -i -- sh -c "
-            cd /portfolio/portfolio
+            cd ~/portfolio/portfolio
             ls
             whoami
           "
