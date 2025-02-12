@@ -10,11 +10,11 @@ jobs:
 
     steps:
     - name: Deploy using ssh # Название шага: Деплой с использованием SSH
-      uses: appleboy/ssh-action@master # Использование готового действия для SSH-подключения
+      uses: appleboy/ssh-action@v1.2.0
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+        key: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
         script: whoami
         # host: ${{ secrets.HOST }} # Хост (сервер) для подключения, берется из секретов Github
