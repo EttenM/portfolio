@@ -18,13 +18,10 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           ls
-          itsroot
           sudo -u etten -i -- sh -c "ls"
-          iametten
-          # cd portfolio
-          # cd portfolio
-          # git pull origin main 
-          # git status
-          # npm install 
-          # npm run build
-          # pm2 restart all 
+          sudo -u etten -i -- sh -c "cd portfolio/portfolio"
+          git pull origin main 
+          git status
+          npm install 
+          npm run build
+          pm2 restart all 
