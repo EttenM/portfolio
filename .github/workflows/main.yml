@@ -18,7 +18,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           su - etten
-          cd portfolio/portfolio 
+          cd ~/portfolio/portfolio
           git pull origin main 
           git status
           npm install 
