@@ -90,7 +90,7 @@ const Hero = () => {
         <RingSvg className=" hero_image w-full h-full invisible" />
       </div>{" "}
       <h1 className="hero_subtitle text-accent text-[10vw] md:text-[6vw] text-center font-rubikMonoOne sm:mt-[-70px] md:mt-[-80px] xl:mt-[-13vh] z-[1] invisible ">
-        Frontend Developer
+        Frontend TEST Developer
       </h1>
       <Image
         src={lines}
