@@ -1,0 +1,25 @@
+name: Portfolio CD 
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Определение окружения: используется последняя версия Ubuntu
+
+    steps:
+    - name: Deploy using ssh 
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }} 
+        username: ${{ secrets.USERNAME }} 
+        key: ${{ secrets.PRIVATE_KEY }} 
+        port: 22 
+        script: |
+          cd ~/portfolio 
+          git pull origin main 
+          git status
+          npm install 
+          npm run build
+          pm2 restart all
