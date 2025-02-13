@@ -6,44 +6,20 @@ import React, { useEffect, useRef, useState } from "react";
 import { cards_array } from "@/constants/projects";
 import VideoCard from "./VideoCard";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Projects = () => {
   const section = useRef();
   const title_up = useRef();
   const title_dawn = useRef();
-  const projectsTl = useRef();
 
   useGSAP(
     () => {
-      let height = window.innerHeight <= 500 ? 700 : window.innerHeight;
-      let width = window.innerWidth;
-
-      const handleResize = () => {
-        height = window.innerHeight;
-        width = window.innerWidth;
-        ScrollTrigger.refresh(true);
-      };
-
-      window.addEventListener("resize", handleResize);
-      projectsTl.current = gsap.timeline({
-        // delay: 0.5,
-        scrollTrigger: {
-          trigger: section.current,
-          start: "center center",
-          end: `+=400%`,
-          scrub: !0,
-          pin: true,
-          pinSpacing: true,
-          anticipatePin: !0,
-          invalidateOnRefresh: true,
-        },
-      });
       gsap.from(title_up.current, {
         opacity: 0,
         duration: 1,
         scrollTrigger: {
-          trigger: section.current,
+          trigger: ".projects_section",
           start: "+=10% bottom",
           end: "center center",
           scrub: true,
@@ -53,56 +29,89 @@ const Projects = () => {
         opacity: 0,
         duration: 1,
         scrollTrigger: {
-          trigger: section.current,
+          trigger: ".projects_section",
           start: "center bottom",
           end: "center center",
           scrub: true,
         },
       });
+      document.addEventListener(
+        "wheel",
+        function touchHandler(e) {
+          if (e.ctrlKey) {
+            e.preventDefault();
+          }
+        },
+        { passive: false }
+      );
 
-      projectsTl.current
-        .from(".circle", { opacity: 0, width: 0, height: 0 }, "same")
-        .to(title_up.current, { xPercent: 100 }, "same")
-        .to(title_dawn.current, { xPercent: -100 }, "same")
-        .to(".circle", {
-          scale: () => {
-            return width <= height ? height / 140 : width / 140;
-          },
-        })
-        .to(".cards", { display: "block" }, "same2");
-      cards_array.map((card, index) => {
-        projectsTl.current.from(
-          `.card_${card.id}`,
-          {
-            scale: 1.5,
-            y: () => {
-              return height * 1.25;
-            },
-            onStart: () => {
-              const video = document.querySelector(`.card_${card.id} video`);
-              video.play();
-            },
-          },
-          `same${card.id + 1}`
-        );
-        if (cards_array.length - 1 === index) {
-          return;
-        } else {
-          projectsTl.current.to(
-            `.card_${card.id}`,
-            { scale: 0.85, filter: "blur(12px)" },
-            `same${card.id + 2}`
-          );
+      let mm = gsap.matchMedia(),
+        breakPoint = 768;
+
+      mm.add(
+        {
+          isDesktop: `(min-width: ${breakPoint}px)`,
+          isMobile: `(max-width: ${breakPoint - 1}px)`,
+          reduceMotion: "(prefers-reduced-motion: reduce)",
+        },
+        (context) => {
+          let { isDesktop, isMobile, reduceMotion } = context.conditions;
+          let height = window.innerHeight <= 500 ? 700 : window.innerHeight;
+          const tl = gsap.timeline();
+          ScrollTrigger.create({
+            trigger: ".projects_section",
+            start: "center center",
+            end: () => `+=${height * 4}px`,
+            scrub: !0,
+            pin: true,
+            pinSpacing: true,
+            anticipatePin: !0,
+            animation: tl,
+          });
+
+          tl.from(".circle", { opacity: 0, width: 0, height: 0 }, "same")
+            .to(title_up.current, { xPercent: 100 }, "same")
+            .to(title_dawn.current, { xPercent: -100 }, "same")
+            .to(".circle", {
+              scale:
+                window.innerWidth <= window.innerHeight
+                  ? window.innerHeight / 140
+                  : window.innerWidth / 140,
+            })
+            .to(".cards", { display: "block" }, "same2");
+          cards_array.map((card, index) => {
+            tl.from(
+              `.card_${card.id}`,
+              {
+                scale: 1.5,
+                y: height * 1.25,
+                onStart: () => {
+                  const video = document.querySelector(
+                    `.card_${card.id} video`
+                  );
+                  if (video && typeof video.play === "function") {
+                    video.play();
+                  }
+                },
+              },
+              `same${card.id + 1}`
+            );
+            if (cards_array.length - 1 === index) {
+              return;
+            } else {
+              tl.to(
+                `.card_${card.id}`,
+                { scale: 0.85, filter: "blur(12px)" },
+                `same${card.id + 2}`
+              );
+            }
+          });
         }
-      });
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
+      );
     },
+
     { scope: section.current }
   );
-
   return (
     <section
       ref={section}
