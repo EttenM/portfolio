@@ -1,9 +1,7 @@
 import { Literata, Rubik_Mono_One, Diplomata_SC } from "next/font/google";
 import "./globals.scss";
-// import Footer from "./blocks/footer/Footer";
 
 import Lenis from "./Lenis";
-import Head from "next/head";
 
 const literata = Literata({
   subsets: ["latin", "cyrillic"],
@@ -22,15 +20,9 @@ const diplomataSC = Diplomata_SC({
 });
 
 export const metadata = {
-  title: "Михаил - Web разработчик",
+  title: "Михаил - Frontend Creative Developer",
   description:
-    "Создам креативный сайт любой сложности с современными анимациями, 3D. Адаптация под устройства, SEO оптимизация, поддержка.",
-  keywords: [
-    "Сайт на заказ",
-    "Разработать сайт",
-    "Сайт с анимациями",
-    "Сделать сайт",
-  ],
+    "Frontend Creative Developer. Создаю эффектные индивидуальные веб-сайты. Ответственно подхожу к работе, уделяю внимание деталям & качеству",
 };
 
 export default function RootLayout({ children }) {

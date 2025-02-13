@@ -1,51 +1,37 @@
+import { navigation } from "@/constants/navigation";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
-import { userAgent } from "next/server";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
-const Header = ({ lenis, preloadOver }) => {
-  const links = [
-    { title: "Домой", href: "#" },
-    { title: " Про меня", href: "/#about" },
-    { title: "Работы", href: "/#works" },
-    { title: "Навыки", href: "/#skills" },
-    { title: "Связаться", href: "/#contact" },
-  ];
+const Header = ({ lenis }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const toggleMenu = () => {
     const state = openMenu;
     setOpenMenu(!state);
   };
-
+  const menuTimeline = useRef();
   useGSAP(() => {
-    const menuTl = gsap.timeline({ paused: true });
-    menuTl
+    menuTimeline.current = gsap.timeline({ paused: true });
+
+    menuTimeline.current
+      .to(".menu_wrapp", { display: "flex", duration: 0 })
       .to(".menu_wrapp", {
-        visibility: "visible",
-        yPercent: 0,
+        yPercent: -110,
         duration: 0.75,
         ease: "ease",
         borderRadius: 0,
-        onStart: () => {
-          lenis?.stop();
-        },
       })
       .to(".link", { opacity: 1, stagger: 0.05, duration: 0.25 });
+  }, []);
 
+  useGSAP(() => {
     if (openMenu) {
-      menuTl.play();
+      lenis?.stop();
+      menuTimeline.current.timeScale(1).play();
     } else if (openMenu === false) {
       lenis?.start();
-      gsap.to(".menu_wrapp", {
-        yPercent: 100,
-        borderRadius: "40%",
-        duration: 0.5,
-      });
-      gsap.to(".link", {
-        opacity: 0,
-        duration: 0.25,
-      });
+      menuTimeline.current.timeScale(3).reverse();
     }
   }, [openMenu]);
   return (
@@ -76,13 +62,13 @@ const Header = ({ lenis, preloadOver }) => {
         </button>
       </div>
       <div
-        className={`menu_wrapp fixed inset-0 bg-secondAccent z-[100] overflow-auto invisible font-rubikMonoOne text-[calc(var(--index)*5)] md:text-[calc(var(--index)*3)] text-white flex flex-col justify-center items-center  gap-[5vh] text-center`}
+        className={`menu_wrapp fixed top-[110%]  left-0 w-screen h-screen bg-secondAccent z-[100] rounded-t-[5em] overflow-auto font-rubikMonoOne text-[calc(var(--index)*5)] md:text-[calc(var(--index)*3)] text-white hidden flex-col justify-center items-center  gap-[5vh] text-center`}
       >
-        {links.map((link, index) => (
+        {navigation.map((link, index) => (
           <Link
             key={index}
             href={link.href}
-            className="link hover:text-accent duration-200"
+            className="link hover:text-accent duration-200 opacity-0"
             onClick={() => {
               setOpenMenu(false);
             }}

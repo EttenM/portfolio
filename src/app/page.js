@@ -1,5 +1,4 @@
-"use client";
-import Image from "next/image";
+// "use client";
 import Hero from "./blocks/hero/Hero";
 import About from "./blocks/about/About";
 import Projects from "./blocks/projects/Projects";

@@ -1,6 +1,7 @@
-import Image from "next/image";
+"use client";
+
 import React, { useRef } from "react";
-import ava from "./images/ava.jpg";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import "./about.scss";
@@ -9,20 +10,21 @@ import SplitType from "split-type";
 const About = () => {
   const target_text = useRef();
   const target_title = useRef();
-  // const split_text = new SplitType.create(ref.current);
+  const split_text = useRef();
+  const split_title = useRef();
 
   useGSAP(() => {
-    const split_text = new SplitType(target_text.current, {
+    split_text.current = new SplitType(target_text.current, {
       splitClass: "split-text",
       types: "lines, words, chars",
     });
-    const split_title = new SplitType(target_title.current, {
+    split_title.current = new SplitType(target_title.current, {
       splitClass: "split-text",
       types: "chars",
     });
 
     gsap.fromTo(
-      split_text.chars,
+      split_text.current.chars,
       { opacity: 0.1 },
       {
         opacity: 1,
@@ -40,7 +42,7 @@ const About = () => {
       }
     );
     gsap.fromTo(
-      split_title.chars,
+      split_title.current.chars,
       { yPercent: 100 },
       {
         yPercent: 0,
