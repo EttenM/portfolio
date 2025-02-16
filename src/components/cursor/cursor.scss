@@ -1,0 +1,14 @@
+.cursor {
+  mix-blend-mode: difference;
+  transition: width 0.25s var(--cubic-bezier),
+    background-color 0.25s var(--cubic-bezier);
+}
+.cursor.active {
+  width: 4vw;
+}
+
+@media (hover: none) {
+  .cursor {
+    display: none;
+  }
+}

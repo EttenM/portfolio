@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useRef } from "react";
-
+import "./cursor.scss";
 const Cursor = () => {
   const cursor = useRef();
   useGSAP(() => {
@@ -36,7 +36,6 @@ const Cursor = () => {
 
   return (
     <>
-      {/* <div className="cursor w-[40px] aspect-square fixed top-0 left-0 pointer-events-none  z-[999] rounded-full border border-gray"></div> */}
       <div
         className="cursor w-[10px] aspect-square fixed top-0 left-0 pointer-events-none  z-[999] rounded-full bg-white"
         ref={cursor}

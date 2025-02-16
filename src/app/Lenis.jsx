@@ -1,9 +1,9 @@
 "use client";
 import React, { createContext, useEffect, useRef, useState } from "react";
 import { ReactLenis, useLenis } from "lenis/react";
-import Footer from "./blocks/footer/Footer";
-import Header from "./blocks/header/Header";
-import Cursor from "./components/Cursor";
+import Footer from "../blocks/footer/Footer";
+import Header from "../blocks/header/Header";
+import Cursor from "../components/cursor/Cursor";
 
 const Lenis = ({ children }) => {
   const lenis = useLenis();

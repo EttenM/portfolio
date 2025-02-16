@@ -29,7 +29,6 @@ const About = () => {
       {
         opacity: 1,
         stagger: 0.5,
-        // duration: 2,
         ease: "ease",
 
         scrollTrigger: {
@@ -37,7 +36,6 @@ const About = () => {
           start: "top +=85%",
           end: "center center",
           scrub: 1,
-          // toggleActions: "play play reverse reverse",
         },
       }
     );

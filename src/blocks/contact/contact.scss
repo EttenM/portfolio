@@ -1,0 +1,35 @@
+// Form
+.form_label {
+  font-size: calc(var(--index) * 1);
+  color: var(--secondColor);
+  opacity: 80;
+  font-weight: 500;
+}
+textarea::placeholder,
+input::placeholder {
+  font-size: calc(var(--index) * 0.5);
+}
+
+@media (max-width: 1600px) {
+  .form_label {
+    font-size: 20px;
+  }
+  textarea::placeholder,
+  input::placeholder {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1280px) {
+}
+
+@media (max-width: 640px) {
+  textarea::placeholder,
+  input::placeholder {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .form_label {
+    font-size: 20px;
+  }
+}

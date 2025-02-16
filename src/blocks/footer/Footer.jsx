@@ -1,6 +1,6 @@
 import React from "react";
-import MailSvg from "../svg/MailSvg";
-import TelegramSvg from "../svg/TelegramSvg";
+import MailSvg from "../../components/svg/MailSvg";
+import TelegramSvg from "../../components/svg/TelegramSvg";
 import Link from "next/link";
 
 const Footer = () => {

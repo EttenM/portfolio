@@ -6,13 +6,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import "./contact.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const contact_section = useRef();
   const boxRef = useRef();
-  const [alert, setAlert] = useState(false);
   const [sending, setSending] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -76,7 +76,6 @@ const Contact = () => {
           Связаться
         </h2>
         <div className="w-full grid grid-rows-[1fr_300px] grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-[30px] lg:gap-[80px] justify-center items-center text-secondColor">
-          {/* <div className="w-full flex flex-col lg:flex-row gap-[30px] lg:gap-[80px] justify-center items-center"> */}
           <form
             action=""
             onSubmit={onSubmitHandler}
@@ -157,46 +156,6 @@ const Contact = () => {
               {!sending && "Отправить"}
             </button>
           </form>
-          {/* <div className="flex flex-col gap-[15px] lg:gap-[30px] text-[4vw] lg:text-[2vw] text-white">
-          <Link
-            href="https://t.me/Mixail_e"
-            target="_blank"
-            className="bg-gray py-[0.25em] rounded-[0.5em] text-center hover:bg-accent hover:text-gold duration-300 ease-out hovered"
-          >
-            Telegram
-          </Link>
-          <div className="flex gap-[5px] lg:gap-[15px] hovered">
-            <button
-              onClick={copyLink}
-              className="relative bg-gray py-[0.25em] rounded-[0.5em] text-center hover:bg-accent hover:text-gold duration-300 ease-out w-full 
-            flex justify-center items-center gap-[10px] overflow-hidden"
-            >
-              <span>nettecrptwork@gmail.com</span>
-              <CopySvg />
-              <div className="copy_message absolute top-0 left-0 w-full h-full py-[0.25em] rounded-[0.5em] bg-gold text-accent font-medium">
-                Скопировано
-              </div>
-            </button>
-            <Link
-              href="mailto:nettecrptwork@gmail.com"
-              target="_blank"
-              className="bg-gray py-[0.25em] px-[0.75em] lg:px-[0.5em]   h-full w-fit lg:w-auto aspect-square rounded-[0.5em] flex items-center justify-center 
-              hover:bg-accent hover:text-gold duration-300 ease-out hovered"
-            >
-              <MailSvg
-                className={"mail w-[1em] h-auto duration-300 ease-out"}
-              />
-            </Link>
-          </div>
-
-          {/* <Link
-            href="https://t.me/Mixail_e"
-            target="_blank"
-            className="bg-gray py-[0.25em] rounded-[0.5em] text-center hover:bg-accent hover:text-gold duration-300 ease-out hovered"
-          >
-            Telegram
-          </Link> 
-        </div> */}
 
           <div
             ref={boxRef}
@@ -209,7 +168,6 @@ const Contact = () => {
             <div className="work_pill2 w-[60%]  py-[0.25em] px-[0.5em] border border-[#000] bg-accent text-center rounded-[0.5em] self-start ml-[7vw] md:ml-[3vw] lg:ml-[1.5vw] will-change-transform">
               Let&apos;s
             </div>
-            {/* <div className="w-[60%] absolute bottom-0 left-[10px] rotate-[20deg] py-[0.25em] px-[1em]">Let's</div> */}
           </div>
         </div>{" "}
       </div>

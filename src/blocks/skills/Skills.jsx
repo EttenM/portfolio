@@ -3,26 +3,11 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FileCode2, X } from "lucide-react";
-import "./style.scss";
+import "./skills.scss";
 import SkillGroupList from "./SkillGroupList";
+import { backend_list, frontend_list, tools_list } from "@/constants/skills";
 gsap.registerPlugin(ScrollTrigger);
 const Skills = () => {
-  const frontend_list = [
-    "JavaScript",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Gsap",
-    "Tailwind",
-    "Scss",
-    "Framer Motion",
-    "Three.js",
-    "Zustand",
-    "TanStack Query",
-  ];
-  const backend_list = ["Postgresql", "MongoDB", "Prisma ORM"];
-  const tools_list = ["ShadCn", "Gulp", "Ubuntu/Nginx"];
-
   useGSAP(() => {
     const items = document.querySelectorAll(".skill_group_title");
 

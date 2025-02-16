@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
 import React, { useRef, useState } from "react";
+import "./header.scss";
 
 const Header = ({ lenis }) => {
   const [openMenu, setOpenMenu] = useState(false);

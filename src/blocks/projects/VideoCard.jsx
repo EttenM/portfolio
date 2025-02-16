@@ -1,5 +1,5 @@
 import React from "react";
-import Arrow from "../svg/Arrow";
+import Arrow from "../../components/svg/Arrow";
 import Link from "next/link";
 const VideoCard = ({ card }) => {
   return (
@@ -8,7 +8,6 @@ const VideoCard = ({ card }) => {
     rounded-[2em] overflow-hidden will-change-transform`}
     >
       <video
-        // src={card.src}
         className="video w-full h-full object-cover focus:outline-none "
         loop
         preload="auto"
