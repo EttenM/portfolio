@@ -11,7 +11,7 @@ const Lenis = ({ children }) => {
 
   const lenisOptions = {
     easing: (t) => Math.sin((t * Math.PI) / 2),
-    duration: 0.75,
+    duration: 0.55,
     smoothTouch: false, //smooth scroll for touch devices
     smooth: true,
   };

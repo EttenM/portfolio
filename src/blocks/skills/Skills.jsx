@@ -6,8 +6,11 @@ import { FileCode2, X } from "lucide-react";
 import "./skills.scss";
 import SkillGroupList from "./SkillGroupList";
 import { backend_list, frontend_list, tools_list } from "@/constants/skills";
+import { animateNumberChange } from "@/service/animateNumberChange";
+import { useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 const Skills = () => {
+  const counterRef = useRef();
   useGSAP(() => {
     const items = document.querySelectorAll(".skill_group_title");
 
@@ -29,18 +32,17 @@ const Skills = () => {
         duration: 0.1,
         opacity: 1,
         stagger: 1.5,
+        onComplete: () => {
+          skills_tl.addPause();
+          animateNumberChange(counterRef.current, 100, 1500);
+          skills_tl.play();
+        },
       })
 
       .to(".counter", {
+        delay: 0.5,
         duration: 1.5,
         ease: "power1.out",
-        onUpdate: function () {
-          if (currentValue >= 100) {
-            return;
-          }
-          currentValue += Math.round(skills_tl.progress() * 2);
-          span.textContent = currentValue;
-        },
       })
       .to(".list_skills", { opacity: 1 });
   });
@@ -67,7 +69,10 @@ const Skills = () => {
           <p className="line-code opacity-0">- подключение к серверу ...</p>
           <p className="line-code opacity-0">
             - загрузка навыков - [
-            <span className="counter inline-block text-end min-w-[30px] sm:min-w-0"></span>
+            <span
+              className="counter inline-block text-end min-w-[30px] sm:min-w-0"
+              ref={counterRef}
+            ></span>
             % / 100%]
           </p>
           <ul className="list_skills flex flex-col gap-[10px] opacity-0">
