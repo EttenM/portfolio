@@ -10,11 +10,17 @@ const VideoCard = ({ card }) => {
       <video
         className="video w-full h-full object-cover focus:outline-none "
         loop
-        preload="auto"
+        preload="metadata"
         playsInline
         muted
+        poster={card.poster}
       >
         <source src={card.src} type="video/mp4" />
+        Тег video не поддерживается вашим браузером.{" "}
+        <Link href={card.link} target="_blank">
+          Перейдите по ссылке
+        </Link>
+        .
       </video>
       <Link
         href={card.link}

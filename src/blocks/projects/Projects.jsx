@@ -61,7 +61,7 @@ const Projects = () => {
           ScrollTrigger.create({
             trigger: ".projects_section",
             start: "center center",
-            end: () => `+=${height * 4}px`,
+            end: () => `+=${height * 5}px`,
             scrub: !0,
             pin: true,
             pinSpacing: true,
